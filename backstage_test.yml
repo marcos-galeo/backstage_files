@@ -1,0 +1,46 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: acrwikimaindev
+  description: Azure Resource
+  resourceMode: data
+  resource_group_name: rg-wiki-pangea-agent-main-dev
+  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.ContainerRegistry/registries/acrwikimaindev
+
+spec:
+  type: azurerm_container_registry
+  owner: Marcos
+  system: Terraform
+  
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: law-wiki-pangea-agent-main-dev
+  description: Azure Resource
+  resourceMode: data
+  resource_group_name: rg-wiki-pangea-agent-main-dev
+  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.ContainerRegistry/registries/acrwikimaindev
+
+spec:
+  type: azurerm_log_analytics_workspace
+  owner: Marcos
+  system: Terraform
+  
+---
+  
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psqls-wiki-pangea-agent-main-dev
+  description: Azure Resource
+  resourceMode: data
+  resource_group_name: rg-wiki-pangea-agent-main-dev
+  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.ContainerRegistry/registries/acrwikimaindev
+
+spec:
+  type: azurerm_postgresql_flexible_server
+  owner: Marcos
+  system: Terraform
+  
