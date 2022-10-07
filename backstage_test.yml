@@ -96,7 +96,6 @@ spec:
   type: azurerm_container_registry
   owner: Marcos Cervantes
   system: Azure Terraform
-  dependsOn: ['data.azurerm_resource_group.resource_group']
 
 ---
 
@@ -113,7 +112,6 @@ spec:
   type: azurerm_log_analytics_workspace
   owner: Marcos Cervantes
   system: Azure Terraform
-  dependsOn: ['data.azurerm_resource_group.resource_group']
 
 ---
 
@@ -130,7 +128,6 @@ spec:
   type: azurerm_postgresql_flexible_server
   owner: Marcos Cervantes
   system: Azure Terraform
-  dependsOn: ['data.azurerm_resource_group.resource_group']
 
 ---
 
@@ -266,7 +263,3 @@ spec:
   type: azurerm_resource_group
   owner: Marcos Cervantes
   system: Azure Terraform
-  
-
----
-
