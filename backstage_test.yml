@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: acrwikimaindev.azurecr.io/crawler:new
+  name: acrwikimaindev.azurecr.io/crawler
   description: Azure Resource
   resourceMode: managed
   resource_group_name: 
@@ -18,7 +18,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: acrwikimaindev.azurecr.io/metabase:new
+  name: acrwikimaindev.azurecr.io/metabase
   description: Azure Resource
   resourceMode: managed
   resource_group_name: 
