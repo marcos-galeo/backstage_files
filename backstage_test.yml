@@ -1,74 +1,6 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: acrwikimaindev
-  description: Azure Resource
-  resourceMode: data
-  resource_group_name: rg-wiki-pangea-agent-main-dev
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.ContainerRegistry/registries/acrwikimaindev
-
-spec:
-  type: azurerm_container_registry
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
-
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: law-wiki-pangea-agent-main-dev
-  description: Azure Resource
-  resourceMode: data
-  resource_group_name: rg-wiki-pangea-agent-main-dev
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.OperationalInsights/workspaces/law-wiki-pangea-agent-main-dev
-
-spec:
-  type: azurerm_log_analytics_workspace
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
-
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: psqls-wiki-pangea-agent-main-dev
-  description: Azure Resource
-  resourceMode: data
-  resource_group_name: rg-wiki-pangea-agent-main-dev
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev
-
-spec:
-  type: azurerm_postgresql_flexible_server
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
-
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: rg-wiki-pangea-agent-main-dev
-  description: Azure Resource
-  resourceMode: data
-  resource_group_name: 
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev
-
-spec:
-  type: azurerm_resource_group
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
-
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
   name: acrwikimaindev.azurecr.io/crawler:new
   description: Azure Resource
   resourceMode: managed
@@ -94,40 +26,6 @@ metadata:
 
 spec:
   type: docker_registry_image
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
-
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: aca-wiki-crawler
-  description: Azure Resource
-  resourceMode: data
-  resource_group_name: 
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/containerApps/aca-wiki-crawler
-
-spec:
-  type: azapi_resource
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
-
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: aca-wiki-metabase
-  description: Azure Resource
-  resourceMode: data
-  resource_group_name: 
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/containerApps/aca-wiki-metabase
-
-spec:
-  type: azapi_resource
   owner: Marcos Cervantes
   system: Azure Terraform
   
@@ -290,7 +188,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: crawler
+  name: crawler_grant
   description: Azure Resource
   resourceMode: managed
   resource_group_name: 
@@ -307,7 +205,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: metabase
+  name: metabase_grant
   description: Azure Resource
   resourceMode: managed
   resource_group_name: 
