@@ -1,0 +1,85 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rg-wiki-pangea-agent-main-dev
+  description: Azure Resource
+  resourceMode: managed
+  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev
+
+spec:
+  type: azurerm_resource_group
+  owner: Marcos Cervantes
+  system: Azure Terraform
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: law-wiki-pangea-agent-main-dev
+  description: Azure Resource
+  resourceMode: managed
+  resource_group_name: rg-wiki-pangea-agent-main-dev
+  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.OperationalInsights/workspaces/law-wiki-pangea-agent-main-dev
+
+spec:
+  type: azurerm_log_analytics_workspace
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  dependsOn:
+    - resource:default/rg-wiki-pangea-agent-main-dev
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psqls-wiki-pangea-agent-main-dev
+  description: Azure Resource
+  resourceMode: managed
+  resource_group_name: rg-wiki-pangea-agent-main-dev
+  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev
+
+spec:
+  type: azurerm_postgresql_flexible_server
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  dependsOn:
+    - resource:default/rg-wiki-pangea-agent-main-dev
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: crawler
+  description: Azure Resource
+  resourceMode: managed
+  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/databases/crawler
+
+spec:
+  type: azurerm_postgresql_flexible_server_database
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  dependsOn:
+    - resource:default/psqls-wiki-pangea-agent-main-dev
+  
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psqls-wiki-pangea-agent-main-dev-fw-rule
+  description: Azure Resource
+  resourceMode: managed
+  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/firewallRules/psqls-wiki-pangea-agent-main-dev-fw-rule
+
+spec:
+  type: azurerm_postgresql_flexible_server_firewall_rule
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  dependsOn:
+    - resource:default/psqls-wiki-pangea-agent-main-dev
+
+---
