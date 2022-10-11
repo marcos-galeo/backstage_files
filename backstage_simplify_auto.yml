@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_log_analytics_workspace.azurerm_log_analytics_workspace
+  name: azurerm_log_analytics_workspace.law_workspace
   description:  law-wiki-pangea-agent-main-dev
   resourceName: law-wiki-pangea-agent-main-dev
   resourceMode: managed
@@ -20,7 +20,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_postgresql_flexible_server.azurerm_postgresql_flexible_server
+  name: azurerm_postgresql_flexible_server.postgresql_server
   description:  psqls-wiki-pangea-agent-main-dev
   resourceName: psqls-wiki-pangea-agent-main-dev
   resourceMode: managed
@@ -39,7 +39,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_postgresql_flexible_server_database.azurerm_postgresql_flexible_server_database
+  name: azurerm_postgresql_flexible_server_database.postgresql_database_crawler
   description:  crawler
   resourceName: crawler
   resourceMode: managed
@@ -58,7 +58,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_postgresql_flexible_server_firewall_rule.azurerm_postgresql_flexible_server_firewall_rule
+  name: azurerm_postgresql_flexible_server_firewall_rule.postgresql_firewall_rule
   description:  psqls-wiki-pangea-agent-main-dev-fw-rule
   resourceName: psqls-wiki-pangea-agent-main-dev-fw-rule
   resourceMode: managed
@@ -77,7 +77,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_resource_group.azurerm_resource_group
+  name: azurerm_resource_group.resource_group
   description:  rg-wiki-pangea-agent-main-dev
   resourceName: rg-wiki-pangea-agent-main-dev
   resourceMode: managed
