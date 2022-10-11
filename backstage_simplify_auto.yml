@@ -19,7 +19,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
+  name: module.postgresql_server.azurerm_postgresql_flexible_server
   description: Azure Resource
 
 spec:
@@ -48,7 +48,7 @@ spec:
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/databases/crawler
   dependsOn: 
     - resource:default/data.azurerm_resource_group.resource_group
-    - resource:default/module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
+    - resource:default/module.postgresql_server.azurerm_postgresql_flexible_server
 
 ---
 
@@ -66,7 +66,7 @@ spec:
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/firewallRules/psqls-wiki-pangea-agent-main-dev-fw-rule
   dependsOn: 
     - resource:default/data.azurerm_resource_group.resource_group
-    - resource:default/module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
+    - resource:default/module.postgresql_server.azurerm_postgresql_flexible_server
 
 ---
 
