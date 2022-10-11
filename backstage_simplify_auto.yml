@@ -12,7 +12,7 @@ spec:
   owner: Marcos Cervantes
   system: Azure Terraform
   dependsOn: 
-	- resource:default/data.azurerm_resource_group.resource_group
+    - resource:default/data.azurerm_resource_group.resource_group
 
 ---
 
@@ -30,7 +30,7 @@ spec:
   owner: Marcos Cervantes
   system: Azure Terraform
   dependsOn: 
-	- resource:default/data.azurerm_resource_group.resource_group
+    - resource:default/data.azurerm_resource_group.resource_group
 
 ---
 
@@ -47,8 +47,8 @@ spec:
   owner: Marcos Cervantes
   system: Azure Terraform
   dependsOn: 
-	- resource:default/data.azurerm_resource_group.resource_group
-	- resource:default/module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
+    - resource:default/data.azurerm_resource_group.resource_group
+    - resource:default/module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
 
 ---
 
@@ -65,8 +65,8 @@ spec:
   owner: Marcos Cervantes
   system: Azure Terraform
   dependsOn: 
-	- resource:default/data.azurerm_resource_group.resource_group
-	- resource:default/module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
+    - resource:default/data.azurerm_resource_group.resource_group
+    - resource:default/module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
 
 ---
 
