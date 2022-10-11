@@ -58,14 +58,14 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_postgresql_flexible_server_firewall_rule.postgresql_firewall_rule
+  name: azurerm_postgresql_flexible_server_fr.postgresql_firewall_rule
   description:  psqls-wiki-pangea-agent-main-dev-fw-rule
   resourceName: psqls-wiki-pangea-agent-main-dev-fw-rule
   resourceMode: managed
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/firewallRules/psqls-wiki-pangea-agent-main-dev-fw-rule
 
 spec:
-  type: azurerm_postgresql_flexible_server_firewall_rule
+  type: azurerm_postgresql_flexible_server_fr
   owner: Marcos Cervantes
   system: Azure Terraform
   dependsOn: 
