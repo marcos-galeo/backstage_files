@@ -39,7 +39,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_postgresql_fa_database.postgresql_database_crawler
+  name: azurerm_postgresql_fs_database.postgresql_database_crawler
   description:  crawler
   resourceName: crawler
   resourceMode: managed
