@@ -39,14 +39,14 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_postgresql_flexible_server_database.postgresql_database_crawler
+  name: azurerm_postgresql_fa_database.postgresql_database_crawler
   description:  crawler
   resourceName: crawler
   resourceMode: managed
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/databases/crawler
 
 spec:
-  type: azurerm_postgresql_flexible_server_database
+  type: azurerm_postgresql_fs_database
   owner: Marcos Cervantes
   system: Azure Terraform
   dependsOn: 
