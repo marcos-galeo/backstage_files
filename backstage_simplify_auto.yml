@@ -11,8 +11,8 @@ spec:
   type: azurerm_log_analytics_workspace
   owner: Marcos Cervantes
   system: Azure Terraform
-  dependsOn:
-    - resource:default/rg-wiki-pangea-agent-main-dev
+  dependsOn: 
+    - resource:default/data.azurerm_resource_group.resource_group
 
 ---
 
@@ -29,8 +29,8 @@ spec:
   type: azurerm_postgresql_flexible_server
   owner: Marcos Cervantes
   system: Azure Terraform
-  dependsOn:
-    - resource:default/rg-wiki-pangea-agent-main-dev
+  dependsOn: 
+    - resource:default/data.azurerm_resource_group.resource_group
 
 ---
 
@@ -40,15 +40,15 @@ metadata:
   name: crawler
   description: Azure Resource
   resourceMode: managed
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/databases/crawler
+    resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/databases/crawler
 
 spec:
   type: azurerm_postgresql_flexible_server_database
   owner: Marcos Cervantes
   system: Azure Terraform
-  dependsOn:
-    - resource:default/psqls-wiki-pangea-agent-main-dev
-  
+  dependsOn: 
+    - resource:default/data.azurerm_resource_group.resource_group
+    - resource:default/module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
 
 ---
 
@@ -58,15 +58,15 @@ metadata:
   name: psqls-wiki-pangea-agent-main-dev-fw-rule
   description: Azure Resource
   resourceMode: managed
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/firewallRules/psqls-wiki-pangea-agent-main-dev-fw-rule
+    resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/firewallRules/psqls-wiki-pangea-agent-main-dev-fw-rule
 
 spec:
   type: azurerm_postgresql_flexible_server_firewall_rule
   owner: Marcos Cervantes
   system: Azure Terraform
-  dependsOn:
-    - resource:default/psqls-wiki-pangea-agent-main-dev
-
+  dependsOn: 
+    - resource:default/data.azurerm_resource_group.resource_group
+    - resource:default/module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
 
 ---
 
@@ -76,12 +76,12 @@ metadata:
   name: rg-wiki-pangea-agent-main-dev
   description: Azure Resource
   resourceMode: managed
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev
+    resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev
 
 spec:
   type: azurerm_resource_group
   owner: Marcos Cervantes
   system: Azure Terraform
-
+  
 ---
 
