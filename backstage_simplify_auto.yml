@@ -48,7 +48,7 @@ spec:
   system: Azure Terraform
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
-    - resource:default/module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
+    - resource:default/modulepostgresql_serverazurerm_postgresql_flexible_serverpostgresql_server
 
 ---
 
@@ -66,7 +66,7 @@ spec:
   system: Azure Terraform
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
-    - resource:default/module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
+    - resource:default/modulepostgresql_serverazurerm_postgresql_flexible_serverpostgresql_server
 
 ---
 
