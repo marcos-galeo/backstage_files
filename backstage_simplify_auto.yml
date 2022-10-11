@@ -19,7 +19,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: module.postgresql_server.azurible_server.postgresql_server
+  name: module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
   description: Azure Resource
   resourceMode: managed
   resource_group_name: rg-wiki-pangea-agent-main-dev
