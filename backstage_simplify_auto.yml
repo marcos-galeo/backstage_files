@@ -19,7 +19,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: psqls-wiki-pangea-agent-main-dev
+  name: module.postgresql_server.azurerm_postgresql_flexible_server.postgresql_server
   description: Azure Resource
   resourceMode: managed
   resource_group_name: rg-wiki-pangea-agent-main-dev
@@ -73,7 +73,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: rg-wiki-pangea-agent-main-dev
+  name: data.azurerm_resource_group.resource_group
   description: Azure Resource
   resourceMode: managed
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev
