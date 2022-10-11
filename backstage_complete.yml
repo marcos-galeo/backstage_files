@@ -1,73 +1,6 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: data.azurerm_container_registry.container_registry
-  description:  acrwikimaindev
-  resourceName: acrwikimaindev
-  resourceMode: data
-  resource_group_name: rg-wiki-pangea-agent-main-dev
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.ContainerRegistry/registries/acrwikimaindev
-
-spec:
-  type: azurerm_container_registry
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: data.azurerm_log_analytics_workspace.law_workspace
-  description:  law-wiki-pangea-agent-main-dev
-  resourceName: law-wiki-pangea-agent-main-dev
-  resourceMode: data
-  resource_group_name: rg-wiki-pangea-agent-main-dev
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.OperationalInsights/workspaces/law-wiki-pangea-agent-main-dev
-
-spec:
-  type: azurerm_log_analytics_workspace
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: data.azurerm_postgresql_flexible_server.postgresql_server
-  description:  psqls-wiki-pangea-agent-main-dev
-  resourceName: psqls-wiki-pangea-agent-main-dev
-  resourceMode: data
-  resource_group_name: rg-wiki-pangea-agent-main-dev
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev
-
-spec:
-  type: azurerm_postgresql_flexible_server
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: data.azurerm_resource_group.resource_group
-  description:  rg-wiki-pangea-agent-main-dev
-  resourceName: rg-wiki-pangea-agent-main-dev
-  resourceMode: data
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev
-
-spec:
-  type: azurerm_resource_group
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
   name: docker_registry_image.crawler
   description:  acrwikimaindev.azurecr.io/crawler:new
   resourceName: acrwikimaindev.azurecr.io/crawler:new
@@ -100,38 +33,6 @@ spec:
   dependsOn: 
     - resource:default/azurerm_container_registry.container_registry
 
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: data.azapi_resource.app_crawler_azure_conf
-  description:  aca-wiki-crawler
-  resourceName: aca-wiki-crawler
-  resourceMode: data
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/containerApps/aca-wiki-crawler
-
-spec:
-  type: azapi_resource
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: data.azapi_resource.app_metabase_azure_conf
-  description:  aca-wiki-metabase
-  resourceName: aca-wiki-metabase
-  resourceMode: data
-  resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/containerApps/aca-wiki-metabase
-
-spec:
-  type: azapi_resource
-  owner: Marcos Cervantes
-  system: Azure Terraform
-  
 ---
 
 apiVersion: backstage.io/v1alpha1
