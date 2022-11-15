@@ -160,7 +160,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_postgresql_flexible_server_database.psql_database_crawler
+  name: azurerm_postgresql_flexible_server_database.psql_db_crawler
   description:  crawler
   resourceName: crawler
   resourceMode: managed
@@ -179,7 +179,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_postgresql_flexible_server_database.psql_database_metabase
+  name: azurerm_postgresql_flexible_server_database.psql_db_metabase
   description:  metabase
   resourceName: metabase
   resourceMode: managed
@@ -198,7 +198,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: azurerm_postgresql_flexible_server_fw_rule.postgresql_fw_rule
+  name: azurerm_postgresql_flexible_server_firewall_rule.psql_fw_rule
   description:  psqls-wiki-pangea-agent-main-dev-fw-rule
   resourceName: psqls-wiki-pangea-agent-main-dev-fw-rule
   resourceMode: managed
@@ -230,8 +230,8 @@ spec:
   dependsOn: 
     - resource:default/azurerm_resource_group.resource_group
     - resource:default/azurerm_postgresql_flexible_server.postgresql_server
-    - resource:default/azurerm_postgresql_flexible_server_database.psql_database_crawler
-    - resource:default/azurerm_postgresql_flexible_server_fw_rule.postgresql_fw_rule
+    - resource:default/azurerm_postgresql_flexible_server_database.psql_db_crawler
+    - resource:default/azurerm_postgresql_flexible_server_firewall_rule.psql_fw_rule
     - resource:default/postgresql_role.crawler_role
 
 ---
@@ -252,8 +252,8 @@ spec:
   dependsOn: 
     - resource:default/azurerm_resource_group.resource_group
     - resource:default/azurerm_postgresql_flexible_server.postgresql_server
-    - resource:default/azurerm_postgresql_flexible_server_database.psql_database_metabase
-    - resource:default/azurerm_postgresql_flexible_server_fw_rule.postgresql_fw_rule
+    - resource:default/azurerm_postgresql_flexible_server_database.psql_db_metabase
+    - resource:default/azurerm_postgresql_flexible_server_firewall_rule.psql_fw_rule
     - resource:default/postgresql_role.metabase_role
 
 ---
@@ -274,7 +274,7 @@ spec:
   dependsOn: 
     - resource:default/azurerm_resource_group.resource_group
     - resource:default/azurerm_postgresql_flexible_server.postgresql_server
-    - resource:default/azurerm_postgresql_flexible_server_fw_rule.postgresql_fw_rule
+    - resource:default/azurerm_postgresql_flexible_server_firewall_rule.psql_fw_rule
 
 ---
 
@@ -294,7 +294,7 @@ spec:
   dependsOn: 
     - resource:default/azurerm_resource_group.resource_group
     - resource:default/azurerm_postgresql_flexible_server.postgresql_server
-    - resource:default/azurerm_postgresql_flexible_server_fw_rule.postgresql_fw_rule
+    - resource:default/azurerm_postgresql_flexible_server_firewall_rule.psql_fw_rule
 
 ---
 
