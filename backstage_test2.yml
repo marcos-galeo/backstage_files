@@ -6,12 +6,6 @@ metadata:
   resourceName: docker_registry_image.crawler
   resourceMode: managed
   resourceID: sha256:81a9c2b13ac48c9f352275182217ae6ba7f7c24e47a40d8ea57721cea53d4e32
-  tags: 
-    - application:main
-    - company:wiki
-    - environment:de
-    - location:westeurope
-    - project:pangea-agent
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcesha256:81a9c2b13ac48c9f352275182217ae6ba7f7c24e47a40d8ea57721cea53d4e32/Overview
       title: My Resource
@@ -21,6 +15,7 @@ spec:
   type: Docker Registry Image
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/acrwikimaindev
     - resource:default/psqls-wiki-pangea-agent-main-dev
@@ -44,6 +39,7 @@ spec:
   type: Docker Registry Image
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/acrwikimaindev
 
@@ -57,6 +53,12 @@ metadata:
   resourceName: azapi_resource.app_crawler
   resourceMode: managed
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/containerApps/aca-wiki-crawler
+  tags: 
+    - application:main
+    - company:wiki
+    - environment:dev
+    - location:westeurope
+    - project:pangea-agent
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/containerApps/aca-wiki-crawler/Overview
       title: My Resource
@@ -66,6 +68,7 @@ spec:
   type: Container App
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/acrwikimaindev
     - resource:default/law-wiki-pangea-agent-main-dev
@@ -84,6 +87,12 @@ metadata:
   resourceName: azapi_resource.app_metabase
   resourceMode: managed
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/containerApps/aca-wiki-metabase
+  tags: 
+    - application:main
+    - company:wiki
+    - environment:dev
+    - location:westeurope
+    - project:pangea-agent
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/containerApps/aca-wiki-metabase/Overview
       title: My Resource
@@ -93,6 +102,7 @@ spec:
   type: Container App
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/acrwikimaindev
     - resource:default/law-wiki-pangea-agent-main-dev
@@ -111,6 +121,12 @@ metadata:
   resourceName: azapi_resource.env_pangea_agent
   resourceMode: managed
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/managedEnvironments/acae-wiki-pangea-agent-main-dev
+  tags: 
+    - application:main
+    - company:wiki
+    - environment:dev
+    - location:westeurope
+    - project:pangea-agent
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/managedEnvironments/acae-wiki-pangea-agent-main-dev/Overview
       title: My Resource
@@ -120,6 +136,7 @@ spec:
   type: Container App
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/law-wiki-pangea-agent-main-dev
     - resource:default/rg-wiki-pangea-agent-main-dev
@@ -135,6 +152,12 @@ metadata:
   resourceMode: managed
   resource_group_name: rg-wiki-pangea-agent-main-dev
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.ContainerRegistry/registries/acrwikimaindev
+  tags: 
+    - application:main
+    - company:wiki
+    - environment:dev
+    - location:westeurope
+    - project:pangea-agent
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.ContainerRegistry/registries/acrwikimaindev/Overview
       title: My Resource
@@ -144,6 +167,7 @@ spec:
   type: Container Registry
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
 
@@ -158,6 +182,12 @@ metadata:
   resourceMode: managed
   resource_group_name: rg-wiki-pangea-agent-main-dev
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.OperationalInsights/workspaces/law-wiki-pangea-agent-main-dev
+  tags: 
+    - application:main
+    - company:wiki
+    - environment:dev
+    - location:westeurope
+    - project:pangea-agent
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.OperationalInsights/workspaces/law-wiki-pangea-agent-main-dev/Overview
       title: My Resource
@@ -167,6 +197,7 @@ spec:
   type: Log Analytic Workspace
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
 
@@ -181,6 +212,12 @@ metadata:
   resourceMode: managed
   resource_group_name: rg-wiki-pangea-agent-main-dev
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev
+  tags: 
+    - application:main
+    - company:wiki
+    - environment:dev
+    - location:westeurope
+    - project:pangea-agent
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.DBforPostgreSQL/flexibleServers/psqls-wiki-pangea-agent-main-dev/Overview
       title: My Resource
@@ -190,6 +227,7 @@ spec:
   type: PSQL Server
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
 
@@ -212,6 +250,7 @@ spec:
   type: PSQL Server Database
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
     - resource:default/psqls-wiki-pangea-agent-main-dev
@@ -235,6 +274,7 @@ spec:
   type: PSQL Server Database
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
     - resource:default/psqls-wiki-pangea-agent-main-dev
@@ -258,6 +298,7 @@ spec:
   type: PSQL Firewall Rule
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
     - resource:default/psqls-wiki-pangea-agent-main-dev
@@ -281,6 +322,7 @@ spec:
   type: PSQL Grant
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
     - resource:default/psqls-wiki-pangea-agent-main-dev
@@ -301,12 +343,13 @@ metadata:
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcemetabase_db_user_metabase_database/Overview
       title: My Resource
-      icon: resource
+      icon: dashboard
 
 spec:
   type: PSQL Grant
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
     - resource:default/psqls-wiki-pangea-agent-main-dev
@@ -333,6 +376,7 @@ spec:
   type: PSQL Role
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
     - resource:default/psqls-wiki-pangea-agent-main-dev
@@ -357,6 +401,7 @@ spec:
   type: PSQL Role
   owner: Marcos Cervantes
   system: Azure Terraform
+  lifecycle: experimental
   dependsOn: 
     - resource:default/rg-wiki-pangea-agent-main-dev
     - resource:default/psqls-wiki-pangea-agent-main-dev
@@ -372,6 +417,12 @@ metadata:
   resourceName: azurerm_resource_group.resource_group
   resourceMode: managed
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev
+  tags: 
+    - application:main
+    - company:wiki
+    - environment:dev
+    - location:westeurope
+    - project:pangea-agent
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/Overview
       title: My Resource
@@ -381,6 +432,7 @@ spec:
   type: Resource Group
   owner: Marcos Cervantes
   system: Azure Terraform
-  
+  lifecycle: experimental
+
 ---
 
