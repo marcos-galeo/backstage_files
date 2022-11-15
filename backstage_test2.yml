@@ -6,6 +6,8 @@ metadata:
   resourceName: docker_registry_image.crawler
   resourceMode: managed
   resourceID: sha256:81a9c2b13ac48c9f352275182217ae6ba7f7c24e47a40d8ea57721cea53d4e32
+  tags:
+    - azure
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcesha256:81a9c2b13ac48c9f352275182217ae6ba7f7c24e47a40d8ea57721cea53d4e32/Overview
       title: My Resource
