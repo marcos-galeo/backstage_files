@@ -217,7 +217,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: crawler
+  name: crawler_grant
   description:  postgresql_grant.crawler_grant
   resourceName: postgresql_grant.crawler_grant
   resourceMode: managed
@@ -239,7 +239,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: metabase
+  name: metabase_grant
   description:  postgresql_grant.metabase_grant
   resourceName: postgresql_grant.metabase_grant
   resourceMode: managed
