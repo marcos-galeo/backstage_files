@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: acrwikimaindev.azurecr.io/crawler:new
+  name: acrwikimaindev.azurecr.io.crawler.new
   description:  docker_registry_image.crawler
   resourceName: docker_registry_image.crawler
   resourceMode: managed
@@ -20,7 +20,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: acrwikimaindev.azurecr.io/metabase:new
+  name: acrwikimaindev.azurecr.io.metabase.new
   description:  docker_registry_image.metabase
   resourceName: docker_registry_image.metabase
   resourceMode: managed
@@ -53,7 +53,7 @@ spec:
     - resource:default/law-wiki-pangea-agent-main-dev
     - resource:default/psqls-wiki-pangea-agent-main-dev
     - resource:default/rg-wiki-pangea-agent-main-dev
-    - resource:default/acrwikimaindev.azurecr.io/crawler:new
+    - resource:default/acrwikimaindev.azurecr.io.crawler.new
     - resource:default/acae-wiki-pangea-agent-main-dev
 
 ---
@@ -76,7 +76,7 @@ spec:
     - resource:default/law-wiki-pangea-agent-main-dev
     - resource:default/psqls-wiki-pangea-agent-main-dev
     - resource:default/rg-wiki-pangea-agent-main-dev
-    - resource:default/acrwikimaindev.azurecr.io/metabase:new
+    - resource:default/acrwikimaindev.azurecr.io.metabase.new
     - resource:default/acae-wiki-pangea-agent-main-dev
 
 ---
