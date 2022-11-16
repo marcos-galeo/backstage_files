@@ -1,0 +1,2561 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rg-gdp-pro-sta
+  description: azurerm_resource_group.rg_sta
+  resourceName: azurerm_resource_group.rg_sta
+  resourceMode: managed
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:sta
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Resource Group
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: stagdpproconfig
+  description: azurerm_storage_account.config
+  resourceName: azurerm_storage_account.config
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-sta
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/providers/Microsoft.Storage/storageAccounts/stagdpproconfig
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:config
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/providers/Microsoft.Storage/storageAccounts/stagdpproconfig/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Storage Account
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: terraform
+  description: azurerm_storage_container.terraform
+  resourceName: azurerm_storage_container.terraform
+  resourceMode: managed
+  resourceID: https://stagdpproconfig.blob.core.windows.net/terraform
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://stagdpproconfig.blob.core.windows.net/terraform/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Storage Container
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/stagdpproconfig
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aks-gdp-pro-main
+  description: azurerm_kubernetes_cluster.aks
+  resourceName: azurerm_kubernetes_cluster.aks
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-aks
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/providers/Microsoft.ContainerService/managedClusters/aks-gdp-pro-main
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:main
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/providers/Microsoft.ContainerService/managedClusters/aks-gdp-pro-main/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Kubernetes Cluster
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: backend-kd
+  description: kubernetes_deployment.backend
+  resourceName: kubernetes_deployment.backend
+  resourceMode: managed
+  resourceID: default/backend
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcedefault/backend/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Kubernetes Deployment
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/aks-gdp-pro-main
+    - resource:default/adlsgdpprodbw
+    - resource:default/psql-gdp-pro-database
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/redis-gdp-pro-main
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: beat
+  description: kubernetes_deployment.beat
+  resourceName: kubernetes_deployment.beat
+  resourceMode: managed
+  resourceID: default/beat
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcedefault/beat/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Kubernetes Deployment
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/aks-gdp-pro-main
+    - resource:default/adlsgdpprodbw
+    - resource:default/psql-gdp-pro-database
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/redis-gdp-pro-main
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: frontend-kd
+  description: kubernetes_deployment.frontend
+  resourceName: kubernetes_deployment.frontend
+  resourceMode: managed
+  resourceID: default/frontend
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcedefault/frontend/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Kubernetes Deployment
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/aks-gdp-pro-main
+    - resource:default/backend-kd
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: worker
+  description: kubernetes_deployment.worker
+  resourceName: kubernetes_deployment.worker
+  resourceMode: managed
+  resourceID: default/worker
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcedefault/worker/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Kubernetes Deployment
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/aks-gdp-pro-main
+    - resource:default/adlsgdpprodbw
+    - resource:default/psql-gdp-pro-database
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/redis-gdp-pro-main
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: backend
+  description: kubernetes_service.backend
+  resourceName: kubernetes_service.backend
+  resourceMode: managed
+  resourceID: default/backend
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcedefault/backend/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Kubernetes Service
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/aks-gdp-pro-main
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: frontend
+  description: kubernetes_service.frontend
+  resourceName: kubernetes_service.frontend
+  resourceMode: managed
+  resourceID: default/frontend
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcedefault/frontend/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Kubernetes Service
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/aks-gdp-pro-main
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: acrgdpproaks
+  description: azurerm_container_registry.acr
+  resourceName: azurerm_container_registry.acr
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-aks
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/providers/Microsoft.ContainerRegistry/registries/acrgdpproaks
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:aks
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/providers/Microsoft.ContainerRegistry/registries/acrgdpproaks/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Container Registry
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dbw-gdp-pro-main
+  description: azurerm_databricks_workspace.dbw
+  resourceName: azurerm_databricks_workspace.dbw
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-data
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.Databricks/workspaces/dbw-gdp-pro-main
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:main
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.Databricks/workspaces/dbw-gdp-pro-main/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Databrick Workspace
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nsg-gdp-pro-dbwb
+  description: azurerm_network_security_group.nsg_dbw_backend
+  resourceName: azurerm_network_security_group.nsg_dbw_backend
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-vnet
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/networkSecurityGroups/nsg-gdp-pro-dbwb
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:backend
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/networkSecurityGroups/nsg-gdp-pro-dbwb/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Security Group
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-vnet
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nsg-gdp-pro-dbwf
+  description: azurerm_network_security_group.nsg_dbw_frontend
+  resourceName: azurerm_network_security_group.nsg_dbw_frontend
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-vnet
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/networkSecurityGroups/nsg-gdp-pro-dbwf
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:frontend
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/networkSecurityGroups/nsg-gdp-pro-dbwf/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Security Group
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-vnet
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: datahub-helm
+  description: helm_release.datahub
+  resourceName: helm_release.datahub
+  resourceMode: managed
+  resourceID: datahub
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcedatahub/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Helm Release
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/aks-gdp-pro-main
+    - resource:default/prerequisites
+    - resource:default/datahub-helm
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: prerequisites
+  description: helm_release.datahub-prerequisites
+  resourceName: helm_release.datahub-prerequisites
+  resourceMode: managed
+  resourceID: prerequisites
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourceprerequisites/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Helm Release
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/aks-gdp-pro-main
+    - resource:default/datahub-helm
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: datahub
+  description: kubernetes_namespace.namespace
+  resourceName: kubernetes_namespace.namespace
+  resourceMode: managed
+  resourceID: datahub
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcedatahub/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Kubernetes Namespace
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/aks-gdp-pro-main
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mysql-secrets
+  description: kubernetes_secret.mysql-secrets
+  resourceName: kubernetes_secret.mysql-secrets
+  resourceMode: managed
+  resourceID: datahub/mysql-secrets
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcedatahub/mysql-secrets/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Kubernetes Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/aks-gdp-pro-main
+    - resource:default/datahub
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: neo4j-secrets
+  description: kubernetes_secret.neo4j-secrets
+  resourceName: kubernetes_secret.neo4j-secrets
+  resourceMode: managed
+  resourceID: datahub/neo4j-secrets
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcedatahub/neo4j-secrets/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Kubernetes Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/aks-gdp-pro-main
+    - resource:default/datahub
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: adlsgdpprodbw
+  description: azurerm_storage_account.datalake
+  resourceName: azurerm_storage_account.datalake
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-sta
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/providers/Microsoft.Storage/storageAccounts/adlsgdpprodbw
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:dbw
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/providers/Microsoft.Storage/storageAccounts/adlsgdpprodbw/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Storage Account
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bronze
+  description: azurerm_storage_container.containers
+  resourceName: azurerm_storage_container.containers
+  resourceMode: managed
+  resourceID: https://adlsgdpprodbw.blob.core.windows.net/bronze
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://adlsgdpprodbw.blob.core.windows.net/bronze/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Storage Container
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/adlsgdpprodbw
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: evh-gdp-pro-connectivityevents
+  description: azurerm_eventhub.eventhub
+  resourceName: azurerm_eventhub.eventhub
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-iot
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/eventhubs/evh-gdp-pro-connectivityevents
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/eventhubs/evh-gdp-pro-connectivityevents/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Eventhub
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/evh-gdp-pro-main
+    - resource:default/rg-gdp-pro-iot
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: evh-gdp-pro-lifecycleevents
+  description: azurerm_eventhub.eventhub
+  resourceName: azurerm_eventhub.eventhub
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-iot
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/eventhubs/evh-gdp-pro-lifecycleevents
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/eventhubs/evh-gdp-pro-lifecycleevents/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Eventhub
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/evh-gdp-pro-main
+    - resource:default/rg-gdp-pro-iot
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: evh-gdp-pro-main
+  description: azurerm_eventhub_namespace.eventhub_namespace
+  resourceName: azurerm_eventhub_namespace.eventhub_namespace
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-iot
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:main
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Eventhub Namespace
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-iot
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: evh-gdp-pro-propertychanges
+  description: azurerm_eventhub.eventhub
+  resourceName: azurerm_eventhub.eventhub
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-iot
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/eventhubs/evh-gdp-pro-propertychanges
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/eventhubs/evh-gdp-pro-propertychanges/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Eventhub
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/evh-gdp-pro-main
+    - resource:default/rg-gdp-pro-iot
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: evh-gdp-pro-telemetry
+  description: azurerm_eventhub.eventhub
+  resourceName: azurerm_eventhub.eventhub
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-iot
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/eventhubs/evh-gdp-pro-telemetry
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/eventhubs/evh-gdp-pro-telemetry/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Eventhub
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/evh-gdp-pro-main
+    - resource:default/rg-gdp-pro-iot
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: evh-gdp-pro-templatelifecycleevents
+  description: azurerm_eventhub.eventhub
+  resourceName: azurerm_eventhub.eventhub
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-iot
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/eventhubs/evh-gdp-pro-templatelifecycleevents
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/eventhubs/evh-gdp-pro-templatelifecycleevents/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Eventhub
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/evh-gdp-pro-main
+    - resource:default/rg-gdp-pro-iot
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kv-gdp-pro-output
+  description: azurerm_key_vault.kv
+  resourceName: azurerm_key_vault.kv
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-kv
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-kv/providers/Microsoft.KeyVault/vaults/kv-gdp-pro-output
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:output
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-kv/providers/Microsoft.KeyVault/vaults/kv-gdp-pro-output/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: adls-gdp-pro-dbwconnectionstring1
+  description: azurerm_key_vault_secret.adls-gdp-dbw-connectionstring1
+  resourceName: azurerm_key_vault_secret.adls-gdp-dbw-connectionstring1
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwconnectionstring1/4147ceb1577946318ac9f54fe2b556f4
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwconnectionstring1/4147ceb1577946318ac9f54fe2b556f4/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: adls-gdp-pro-dbwconnectionstring2
+  description: azurerm_key_vault_secret.adls-gdp-dbw-connectionstring2
+  resourceName: azurerm_key_vault_secret.adls-gdp-dbw-connectionstring2
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwconnectionstring2/57a45abd483b4373894fa70e898ee6cb
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwconnectionstring2/57a45abd483b4373894fa70e898ee6cb/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: adls-gdp-pro-dbwkey1
+  description: azurerm_key_vault_secret.adls-gdp-dbw-key1
+  resourceName: azurerm_key_vault_secret.adls-gdp-dbw-key1
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwkey1/c2678e31125c440aa1358378f2eef416
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwkey1/c2678e31125c440aa1358378f2eef416/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: adls-gdp-pro-dbwkey2
+  description: azurerm_key_vault_secret.adls-gdp-dbw-key2
+  resourceName: azurerm_key_vault_secret.adls-gdp-dbw-key2
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwkey2/4b833943e52d475f9c4d57f9a6ca377d
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwkey2/4b833943e52d475f9c4d57f9a6ca377d/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: app-gdp-pro-devopsclientid
+  description: azurerm_key_vault_secret.appdevops-gdp-clientid
+  resourceName: azurerm_key_vault_secret.appdevops-gdp-clientid
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/app-gdp-pro-devopsclientid/cb0b192f215d4f12b2a7115bd29bf0a8
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/app-gdp-pro-devopsclientid/cb0b192f215d4f12b2a7115bd29bf0a8/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: app-gdp-pro-devopsobjectid
+  description: azurerm_key_vault_secret.appdevops-gdp-objectid
+  resourceName: azurerm_key_vault_secret.appdevops-gdp-objectid
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/app-gdp-pro-devopsobjectid/f80089b7faf94329946c73c9067eefff
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/app-gdp-pro-devopsobjectid/f80089b7faf94329946c73c9067eefff/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: datahub-gdp-pro-passwordmysql
+  description: azurerm_key_vault_secret.datahub-gdp-mysql-password
+  resourceName: azurerm_key_vault_secret.datahub-gdp-mysql-password
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordmysql/4d2968b983d247e697428bca019b9576
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordmysql/4d2968b983d247e697428bca019b9576/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: datahub-gdp-pro-passwordneo4j
+  description: azurerm_key_vault_secret.datahub-gdp-neo4j-password
+  resourceName: azurerm_key_vault_secret.datahub-gdp-neo4j-password
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordneo4j/3ff27f0942514e8e9c93303fec8db486
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordneo4j/3ff27f0942514e8e9c93303fec8db486/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: datahub-gdp-pro-passwordadmin
+  description: azurerm_key_vault_secret.datahub-gdp-password-admin
+  resourceName: azurerm_key_vault_secret.datahub-gdp-password-admin
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordadmin/315ebe4fc92a47a08f2455c92472011c
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordadmin/315ebe4fc92a47a08f2455c92472011c/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dbw-gdp-pro-clusterid
+  description: azurerm_key_vault_secret.dbw-gdp-cluster-id
+  resourceName: azurerm_key_vault_secret.dbw-gdp-cluster-id
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-clusterid/262249163543453fa2bed8d1e2b68dfd
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-clusterid/262249163543453fa2bed8d1e2b68dfd/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dbw-gdp-pro-tokenid
+  description: azurerm_key_vault_secret.dbw-gdp-token-id
+  resourceName: azurerm_key_vault_secret.dbw-gdp-token-id
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-tokenid/f6d703f4d5954a06af9ba6c843a3aebf
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-tokenid/f6d703f4d5954a06af9ba6c843a3aebf/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dbw-gdp-pro-tokenvalue
+  description: azurerm_key_vault_secret.dbw-gdp-token-value
+  resourceName: azurerm_key_vault_secret.dbw-gdp-token-value
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-tokenvalue/b9d8481895f34c988b6029ec58f1f13d
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-tokenvalue/b9d8481895f34c988b6029ec58f1f13d/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psql-gdp-pro-database-secret
+  description: azurerm_key_vault_secret.psql-gdp-database
+  resourceName: azurerm_key_vault_secret.psql-gdp-database
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-database/e7df3b4091444aaba9019a63623ee144
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-database/e7df3b4091444aaba9019a63623ee144/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psql-gdp-pro-host
+  description: azurerm_key_vault_secret.psql-gdp-host
+  resourceName: azurerm_key_vault_secret.psql-gdp-host
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-host/3a746fb43c2b4373a53959b83bea2d75
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-host/3a746fb43c2b4373a53959b83bea2d75/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psql-gdp-pro-jdbc
+  description: azurerm_key_vault_secret.psql-gdp-jdbc
+  resourceName: azurerm_key_vault_secret.psql-gdp-jdbc
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-jdbc/3dccf8621e634eb58c8191b6259d2289
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-jdbc/3dccf8621e634eb58c8191b6259d2289/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psql-gdp-pro-passwordadmin
+  description: azurerm_key_vault_secret.psql-gdp-password-admin
+  resourceName: azurerm_key_vault_secret.psql-gdp-password-admin
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-passwordadmin/3018e1df44644ec08b073e148b0a061d
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-passwordadmin/3018e1df44644ec08b073e148b0a061d/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psql-gdp-pro-useradmin
+  description: azurerm_key_vault_secret.psql-gdp-user-admin
+  resourceName: azurerm_key_vault_secret.psql-gdp-user-admin
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-useradmin/e614a5ed760e403dafbfe9672856df47
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-useradmin/e614a5ed760e403dafbfe9672856df47/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: sp-gdp-dbwclientid
+  description: azurerm_key_vault_secret.sp-gdp-dbwclientid
+  resourceName: azurerm_key_vault_secret.sp-gdp-dbwclientid
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/sp-gdp-dbwclientid/0d5e7eec37324d9a845b30fbd3591fd6
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/sp-gdp-dbwclientid/0d5e7eec37324d9a845b30fbd3591fd6/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: sp-gdp-dbwsecretvalue
+  description: azurerm_key_vault_secret.sp-gdp-dbwsecretvalue
+  resourceName: azurerm_key_vault_secret.sp-gdp-dbwsecretvalue
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/sp-gdp-dbwsecretvalue/8f60d66e947a43e4ae95a2caac498907
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/sp-gdp-dbwsecretvalue/8f60d66e947a43e4ae95a2caac498907/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: subscription-gdp-pro-id
+  description: azurerm_key_vault_secret.subscription-gdp-id
+  resourceName: azurerm_key_vault_secret.subscription-gdp-id
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/subscription-gdp-pro-id/c4a88fd4174f433399c206d77f8fdf7d
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/subscription-gdp-pro-id/c4a88fd4174f433399c206d77f8fdf7d/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: subscription-gdp-pro-name
+  description: azurerm_key_vault_secret.subscription-gdp-name
+  resourceName: azurerm_key_vault_secret.subscription-gdp-name
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/subscription-gdp-pro-name/f1c0929683be4a3f8b6813e581c05615
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/subscription-gdp-pro-name/f1c0929683be4a3f8b6813e581c05615/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tenant-gdp-pro-id
+  description: azurerm_key_vault_secret.tenant-gdp-id
+  resourceName: azurerm_key_vault_secret.tenant-gdp-id
+  resourceMode: managed
+  resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/tenant-gdp-pro-id/8ec3b792235747019ac2450fd84252f7
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/tenant-gdp-pro-id/8ec3b792235747019ac2450fd84252f7/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Key Vault Secret
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/dbw-gdp-pro-main
+    - resource:default/nsg-gdp-pro-dbwb
+    - resource:default/nsg-gdp-pro-dbwf
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/
+    - resource:default/adlsgdpprodbw
+    - resource:default/bronze
+    - resource:default/kv-gdp-pro-output
+    - resource:default/
+    - resource:default/
+    - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+    - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
+    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-firewall
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: 854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+  description: azurerm_role_assignment.rbac_aks_to_acr
+  resourceName: azurerm_role_assignment.rbac_aks_to_acr
+  resourceMode: managed
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/providers/Microsoft.ContainerRegistry/registries/acrgdpproaks/providers/Microsoft.Authorization/roleAssignments/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/providers/Microsoft.ContainerRegistry/registries/acrgdpproaks/providers/Microsoft.Authorization/roleAssignments/854abdf7-47ff-5905-04e0-ff0d8fd8c69f/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Role Assignment
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/aks-gdp-pro-main
+    - resource:default/acrgdpproaks
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bbe185db-42e1-e49d-0710-979e13f0b0bf
+  description: azurerm_role_assignment.rbac_sp_dbw_to_adls
+  resourceName: azurerm_role_assignment.rbac_sp_dbw_to_adls
+  resourceMode: managed
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/providers/Microsoft.Storage/storageAccounts/adlsgdpprodbw/providers/Microsoft.Authorization/roleAssignments/bbe185db-42e1-e49d-0710-979e13f0b0bf
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/providers/Microsoft.Storage/storageAccounts/adlsgdpprodbw/providers/Microsoft.Authorization/roleAssignments/bbe185db-42e1-e49d-0710-979e13f0b0bf/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Role Assignment
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-sta
+    - resource:default/adlsgdpprodbw
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/snet-gdp-pro-aks
+    - resource:default/snet-gdp-pro-dbwb
+    - resource:default/snet-gdp-pro-dbwf
+    - resource:default/snet-gdp-pro-global
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psql-gdp-pro-database
+  description: azurerm_postgresql_database.psql_database
+  resourceName: azurerm_postgresql_database.psql_database
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-data
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.DBforPostgreSQL/servers/psql-gdp-pro-main/databases/psql-gdp-pro-database
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.DBforPostgreSQL/servers/psql-gdp-pro-main/databases/psql-gdp-pro-database/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: PSQL Server Database
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psql-gdp-pro-firewall
+  description: azurerm_postgresql_firewall_rule.psql_firewall
+  resourceName: azurerm_postgresql_firewall_rule.psql_firewall
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-data
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.DBforPostgreSQL/servers/psql-gdp-pro-main/firewallRules/psql-gdp-pro-firewall
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.DBforPostgreSQL/servers/psql-gdp-pro-main/firewallRules/psql-gdp-pro-firewall/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: PSQL Firewall Rule
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/psql-gdp-pro-main
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: psql-gdp-pro-main
+  description: azurerm_postgresql_server.psql_basic
+  resourceName: azurerm_postgresql_server.psql_basic
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-data
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.DBforPostgreSQL/servers/psql-gdp-pro-main
+  tags: 
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.DBforPostgreSQL/servers/psql-gdp-pro-main/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: PSQL Server
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: redis-gdp-pro-main
+  description: azurerm_redis_cache.redis
+  resourceName: azurerm_redis_cache.redis
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-data
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.Cache/Redis/redis-gdp-pro-main
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:main
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.Cache/Redis/redis-gdp-pro-main/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Redis Cache
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-data
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rg-gdp-pro-aks
+  description: azurerm_resource_group.rg-aks
+  resourceName: azurerm_resource_group.rg-aks
+  resourceMode: managed
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:aks
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Resource Group
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rg-gdp-pro-data
+  description: azurerm_resource_group.rg-data
+  resourceName: azurerm_resource_group.rg-data
+  resourceMode: managed
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:data
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Resource Group
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rg-gdp-pro-iot
+  description: azurerm_resource_group.rg-iot
+  resourceName: azurerm_resource_group.rg-iot
+  resourceMode: managed
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:iot
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Resource Group
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rg-gdp-pro-kv
+  description: azurerm_resource_group.rg-kv
+  resourceName: azurerm_resource_group.rg-kv
+  resourceMode: managed
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-kv
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:kv
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-kv/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Resource Group
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rg-gdp-pro-vnet
+  description: azurerm_resource_group.rg-vnet
+  resourceName: azurerm_resource_group.rg-vnet
+  resourceMode: managed
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:vnet
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Resource Group
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: snet-gdp-pro-aks
+  description: azurerm_subnet.subnet_aks
+  resourceName: azurerm_subnet.subnet_aks
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-vnet
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main/subnets/snet-gdp-pro-aks
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main/subnets/snet-gdp-pro-aks/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Virtual Subnetwork
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: snet-gdp-pro-dbwb
+  description: azurerm_subnet.subnet_dbw_backend
+  resourceName: azurerm_subnet.subnet_dbw_backend
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-vnet
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main/subnets/snet-gdp-pro-dbwb
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main/subnets/snet-gdp-pro-dbwb/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Virtual Subnetwork
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: snet-gdp-pro-dbwf
+  description: azurerm_subnet.subnet_dbw_frontend
+  resourceName: azurerm_subnet.subnet_dbw_frontend
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-vnet
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main/subnets/snet-gdp-pro-dbwf
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main/subnets/snet-gdp-pro-dbwf/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Virtual Subnetwork
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: snet-gdp-pro-global
+  description: azurerm_subnet.subnet_global
+  resourceName: azurerm_subnet.subnet_global
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-vnet
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main/subnets/snet-gdp-pro-global
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main/subnets/snet-gdp-pro-global/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Virtual Subnetwork
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+    - resource:default/vnet-gdp-pro-main
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vnet-gdp-pro-main
+  description: azurerm_virtual_network.vnet
+  resourceName: azurerm_virtual_network.vnet
+  resourceMode: managed
+  resource_group_name: rg-gdp-pro-vnet
+  resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main
+  tags: 
+    - Env:pro
+    - Project:gdp
+    - Role:main
+  links:
+    - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main/Overview
+      title: My Resource
+      icon: dashboard
+
+spec:
+  type: Virtual Network
+  owner: Marcos Cervantes
+  system: Azure Terraform
+  lifecycle: experimental
+  dependsOn: 
+    - resource:default/rg-gdp-pro-aks
+    - resource:default/rg-gdp-pro-data
+    - resource:default/rg-gdp-pro-iot
+    - resource:default/rg-gdp-pro-kv
+    - resource:default/rg-gdp-pro-vnet
+
+---
+
