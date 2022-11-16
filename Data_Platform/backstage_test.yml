@@ -7,9 +7,9 @@ metadata:
   resourceMode: managed
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:sta
+    - env:pro
+    - project:gdp
+    - role:sta
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/Overview
       title: My Resource
@@ -33,9 +33,9 @@ metadata:
   resource_group_name: rg-gdp-pro-sta
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/providers/Microsoft.Storage/storageAccounts/stagdpproconfig
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:config
+    - env:pro
+    - project:gdp
+    - role:config
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/providers/Microsoft.Storage/storageAccounts/stagdpproconfig/Overview
       title: My Resource
@@ -85,9 +85,9 @@ metadata:
   resource_group_name: rg-gdp-pro-aks
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/providers/Microsoft.ContainerService/managedClusters/aks-gdp-pro-main
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:main
+    - env:pro
+    - project:gdp
+    - role:main
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/providers/Microsoft.ContainerService/managedClusters/aks-gdp-pro-main/Overview
       title: My Resource
@@ -134,9 +134,8 @@ spec:
     - resource:default/rg-gdp-pro-sta
     - resource:default/aks-gdp-pro-main
     - resource:default/adlsgdpprodbw
-    - resource:default/psql-gdp-pro-database
+    - resource:default/psql-gdp-pro-database-off
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/redis-gdp-pro-main
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
@@ -173,9 +172,8 @@ spec:
     - resource:default/rg-gdp-pro-sta
     - resource:default/aks-gdp-pro-main
     - resource:default/adlsgdpprodbw
-    - resource:default/psql-gdp-pro-database
+    - resource:default/psql-gdp-pro-database-off
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/redis-gdp-pro-main
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
@@ -246,9 +244,8 @@ spec:
     - resource:default/rg-gdp-pro-sta
     - resource:default/aks-gdp-pro-main
     - resource:default/adlsgdpprodbw
-    - resource:default/psql-gdp-pro-database
+    - resource:default/psql-gdp-pro-database-off
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/redis-gdp-pro-main
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
@@ -339,9 +336,9 @@ metadata:
   resource_group_name: rg-gdp-pro-aks
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/providers/Microsoft.ContainerRegistry/registries/acrgdpproaks
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:aks
+    - env:pro
+    - project:gdp
+    - role:aks
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/providers/Microsoft.ContainerRegistry/registries/acrgdpproaks/Overview
       title: My Resource
@@ -371,9 +368,9 @@ metadata:
   resource_group_name: rg-gdp-pro-data
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.Databricks/workspaces/dbw-gdp-pro-main
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:main
+    - env:pro
+    - project:gdp
+    - role:main
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.Databricks/workspaces/dbw-gdp-pro-main/Overview
       title: My Resource
@@ -387,8 +384,6 @@ spec:
   dependsOn: 
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -410,9 +405,9 @@ metadata:
   resource_group_name: rg-gdp-pro-vnet
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/networkSecurityGroups/nsg-gdp-pro-dbwb
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:backend
+    - env:pro
+    - project:gdp
+    - role:backend
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/networkSecurityGroups/nsg-gdp-pro-dbwb/Overview
       title: My Resource
@@ -438,9 +433,9 @@ metadata:
   resource_group_name: rg-gdp-pro-vnet
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/networkSecurityGroups/nsg-gdp-pro-dbwf
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:frontend
+    - env:pro
+    - project:gdp
+    - role:frontend
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/networkSecurityGroups/nsg-gdp-pro-dbwf/Overview
       title: My Resource
@@ -579,7 +574,6 @@ spec:
   dependsOn: 
     - resource:default/aks-gdp-pro-main
     - resource:default/datahub
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -614,7 +608,6 @@ spec:
   dependsOn: 
     - resource:default/aks-gdp-pro-main
     - resource:default/datahub
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -638,9 +631,9 @@ metadata:
   resource_group_name: rg-gdp-pro-sta
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/providers/Microsoft.Storage/storageAccounts/adlsgdpprodbw
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:dbw
+    - env:pro
+    - project:gdp
+    - role:dbw
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-sta/providers/Microsoft.Storage/storageAccounts/adlsgdpprodbw/Overview
       title: My Resource
@@ -760,9 +753,9 @@ metadata:
   resource_group_name: rg-gdp-pro-iot
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:main
+    - env:pro
+    - project:gdp
+    - role:main
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/providers/Microsoft.EventHub/namespaces/evh-gdp-pro-main/Overview
       title: My Resource
@@ -863,9 +856,9 @@ metadata:
   resource_group_name: rg-gdp-pro-kv
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-kv/providers/Microsoft.KeyVault/vaults/kv-gdp-pro-output
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:output
+    - env:pro
+    - project:gdp
+    - role:output
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-kv/providers/Microsoft.KeyVault/vaults/kv-gdp-pro-output/Overview
       title: My Resource
@@ -877,7 +870,6 @@ spec:
   system: Azure Terraform
   lifecycle: experimental
   dependsOn: 
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -906,27 +898,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -960,27 +944,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1014,27 +990,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1068,27 +1036,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1122,27 +1082,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1176,27 +1128,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1230,28 +1174,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1285,28 +1220,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1340,28 +1266,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1383,7 +1300,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.dbw-gdp-cluster-id
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-clusterid/262249163543453fa2bed8d1e2b68dfd
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-clusterid/262249163543453fa2bed8d1e2b68dfd/Overview
       title: My Resource
@@ -1396,27 +1312,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1438,7 +1346,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.dbw-gdp-token-id
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-tokenid/f6d703f4d5954a06af9ba6c843a3aebf
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-tokenid/f6d703f4d5954a06af9ba6c843a3aebf/Overview
       title: My Resource
@@ -1451,27 +1358,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1493,7 +1392,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.dbw-gdp-token-value
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-tokenvalue/b9d8481895f34c988b6029ec58f1f13d
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-tokenvalue/b9d8481895f34c988b6029ec58f1f13d/Overview
       title: My Resource
@@ -1506,27 +1404,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1543,7 +1433,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: psql-gdp-pro-database-secret
+  name: psql-gdp-pro-database
   description: azurerm_key_vault_secret.psql-gdp-database
   resourceName: azurerm_key_vault_secret.psql-gdp-database
   resourceMode: managed
@@ -1560,27 +1450,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1614,27 +1496,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1668,27 +1542,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1722,27 +1588,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1776,27 +1634,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1830,27 +1680,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1884,27 +1726,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1938,27 +1772,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -1992,28 +1818,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -2047,27 +1864,19 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/rg-gdp-pro-sta
-    - resource:default/
     - resource:default/aks-gdp-pro-main
     - resource:default/acrgdpproaks
     - resource:default/dbw-gdp-pro-main
     - resource:default/nsg-gdp-pro-dbwb
     - resource:default/nsg-gdp-pro-dbwf
-    - resource:default/
-    - resource:default/
-    - resource:default/
-    - resource:default/
     - resource:default/adlsgdpprodbw
     - resource:default/bronze
     - resource:default/kv-gdp-pro-output
-    - resource:default/
-    - resource:default/
     - resource:default/854abdf7-47ff-5905-04e0-ff0d8fd8c69f
     - resource:default/bbe185db-42e1-e49d-0710-979e13f0b0bf
-    - resource:default/psql-gdp-pro-database-secret
+    - resource:default/psql-gdp-pro-database
     - resource:default/psql-gdp-pro-firewall
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -2152,7 +1961,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: psql-gdp-pro-database
+  name: psql-gdp-pro-database-off
   description: azurerm_postgresql_database.psql_database
   resourceName: azurerm_postgresql_database.psql_database
   resourceMode: managed
@@ -2170,7 +1979,6 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -2200,7 +2008,6 @@ spec:
   lifecycle: experimental
   dependsOn: 
     - resource:default/psql-gdp-pro-main
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -2229,7 +2036,6 @@ spec:
   system: Azure Terraform
   lifecycle: experimental
   dependsOn: 
-    - resource:default/
     - resource:default/rg-gdp-pro-aks
     - resource:default/rg-gdp-pro-data
     - resource:default/rg-gdp-pro-iot
@@ -2248,9 +2054,9 @@ metadata:
   resource_group_name: rg-gdp-pro-data
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.Cache/Redis/redis-gdp-pro-main
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:main
+    - env:pro
+    - project:gdp
+    - role:main
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.Cache/Redis/redis-gdp-pro-main/Overview
       title: My Resource
@@ -2275,9 +2081,9 @@ metadata:
   resourceMode: managed
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:aks
+    - env:pro
+    - project:gdp
+    - role:aks
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-aks/Overview
       title: My Resource
@@ -2300,9 +2106,9 @@ metadata:
   resourceMode: managed
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:data
+    - env:pro
+    - project:gdp
+    - role:data
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/Overview
       title: My Resource
@@ -2325,9 +2131,9 @@ metadata:
   resourceMode: managed
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:iot
+    - env:pro
+    - project:gdp
+    - role:iot
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-iot/Overview
       title: My Resource
@@ -2350,9 +2156,9 @@ metadata:
   resourceMode: managed
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-kv
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:kv
+    - env:pro
+    - project:gdp
+    - role:kv
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-kv/Overview
       title: My Resource
@@ -2375,9 +2181,9 @@ metadata:
   resourceMode: managed
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:vnet
+    - env:pro
+    - project:gdp
+    - role:vnet
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/Overview
       title: My Resource
@@ -2517,9 +2323,9 @@ metadata:
   resource_group_name: rg-gdp-pro-vnet
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main
   tags: 
-    - Env:pro
-    - Project:gdp
-    - Role:main
+    - env:pro
+    - project:gdp
+    - role:main
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-vnet/providers/Microsoft.Network/virtualNetworks/vnet-gdp-pro-main/Overview
       title: My Resource
