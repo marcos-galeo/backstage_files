@@ -54,11 +54,9 @@ metadata:
   resourceMode: managed
   resourceID: /subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/containerApps/aca-wiki-crawler
   tags: 
-    - application:main
-    - company:wiki
-    - environment:dev
-    - location:westeurope
-    - project:pangea-agent"
+    - Env:pro
+    - Project:gdp
+    - Role:main
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/fd3dc29c-3aef-4866-8f69-8ba0a9d31e42/resourceGroups/rg-wiki-pangea-agent-main-dev/providers/Microsoft.App/containerApps/aca-wiki-crawler/Overview
       title: My Resource
