@@ -1491,7 +1491,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.dbw-gdp-token-value
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-tokenvalue/b9d8481895f34c988b6029ec58f1f13d
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/dbw-gdp-pro-tokenvalue/b9d8481895f34c988b6029ec58f1f13d/Overview
       title: My Resource
