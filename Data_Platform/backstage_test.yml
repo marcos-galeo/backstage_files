@@ -894,7 +894,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.adls-gdp-dbw-connectionstring1
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwconnectionstring1/4147ceb1577946318ac9f54fe2b556f4
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwconnectionstring1/4147ceb1577946318ac9f54fe2b556f4/Overview
       title: My Resource
@@ -949,7 +948,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.adls-gdp-dbw-connectionstring2
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwconnectionstring2/57a45abd483b4373894fa70e898ee6cb
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwconnectionstring2/57a45abd483b4373894fa70e898ee6cb/Overview
       title: My Resource
@@ -1004,7 +1002,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.adls-gdp-dbw-key1
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwkey1/c2678e31125c440aa1358378f2eef416
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwkey1/c2678e31125c440aa1358378f2eef416/Overview
       title: My Resource
@@ -1059,7 +1056,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.adls-gdp-dbw-key2
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwkey2/4b833943e52d475f9c4d57f9a6ca377d
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/adls-gdp-pro-dbwkey2/4b833943e52d475f9c4d57f9a6ca377d/Overview
       title: My Resource
@@ -1114,7 +1110,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.appdevops-gdp-clientid
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/app-gdp-pro-devopsclientid/cb0b192f215d4f12b2a7115bd29bf0a8
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/app-gdp-pro-devopsclientid/cb0b192f215d4f12b2a7115bd29bf0a8/Overview
       title: My Resource
@@ -1169,7 +1164,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.appdevops-gdp-objectid
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/app-gdp-pro-devopsobjectid/f80089b7faf94329946c73c9067eefff
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/app-gdp-pro-devopsobjectid/f80089b7faf94329946c73c9067eefff/Overview
       title: My Resource
@@ -1224,7 +1218,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.datahub-gdp-mysql-password
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordmysql/4d2968b983d247e697428bca019b9576
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordmysql/4d2968b983d247e697428bca019b9576/Overview
       title: My Resource
@@ -1280,7 +1273,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.datahub-gdp-neo4j-password
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordneo4j/3ff27f0942514e8e9c93303fec8db486
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordneo4j/3ff27f0942514e8e9c93303fec8db486/Overview
       title: My Resource
@@ -1336,7 +1328,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.datahub-gdp-password-admin
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordadmin/315ebe4fc92a47a08f2455c92472011c
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/datahub-gdp-pro-passwordadmin/315ebe4fc92a47a08f2455c92472011c/Overview
       title: My Resource
@@ -1557,7 +1548,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.psql-gdp-database
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-database/e7df3b4091444aaba9019a63623ee144
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-database/e7df3b4091444aaba9019a63623ee144/Overview
       title: My Resource
@@ -1612,7 +1602,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.psql-gdp-host
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-host/3a746fb43c2b4373a53959b83bea2d75
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-host/3a746fb43c2b4373a53959b83bea2d75/Overview
       title: My Resource
@@ -1667,7 +1656,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.psql-gdp-jdbc
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-jdbc/3dccf8621e634eb58c8191b6259d2289
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-jdbc/3dccf8621e634eb58c8191b6259d2289/Overview
       title: My Resource
@@ -1722,7 +1710,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.psql-gdp-password-admin
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-passwordadmin/3018e1df44644ec08b073e148b0a061d
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-passwordadmin/3018e1df44644ec08b073e148b0a061d/Overview
       title: My Resource
@@ -1777,7 +1764,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.psql-gdp-user-admin
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-useradmin/e614a5ed760e403dafbfe9672856df47
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/psql-gdp-pro-useradmin/e614a5ed760e403dafbfe9672856df47/Overview
       title: My Resource
@@ -1832,7 +1818,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.sp-gdp-dbwclientid
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/sp-gdp-dbwclientid/0d5e7eec37324d9a845b30fbd3591fd6
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/sp-gdp-dbwclientid/0d5e7eec37324d9a845b30fbd3591fd6/Overview
       title: My Resource
@@ -1887,7 +1872,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.sp-gdp-dbwsecretvalue
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/sp-gdp-dbwsecretvalue/8f60d66e947a43e4ae95a2caac498907
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/sp-gdp-dbwsecretvalue/8f60d66e947a43e4ae95a2caac498907/Overview
       title: My Resource
@@ -1942,7 +1926,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.subscription-gdp-id
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/subscription-gdp-pro-id/c4a88fd4174f433399c206d77f8fdf7d
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/subscription-gdp-pro-id/c4a88fd4174f433399c206d77f8fdf7d/Overview
       title: My Resource
@@ -1997,7 +1980,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.subscription-gdp-name
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/subscription-gdp-pro-name/f1c0929683be4a3f8b6813e581c05615
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/subscription-gdp-pro-name/f1c0929683be4a3f8b6813e581c05615/Overview
       title: My Resource
@@ -2053,7 +2035,6 @@ metadata:
   resourceName: azurerm_key_vault_secret.tenant-gdp-id
   resourceMode: managed
   resourceID: https://kv-gdp-pro-output.vault.azure.net/secrets/tenant-gdp-pro-id/8ec3b792235747019ac2450fd84252f7
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resourcehttps://kv-gdp-pro-output.vault.azure.net/secrets/tenant-gdp-pro-id/8ec3b792235747019ac2450fd84252f7/Overview
       title: My Resource
@@ -2237,7 +2218,6 @@ metadata:
   resourceMode: managed
   resource_group_name: rg-gdp-pro-data
   resourceID: /subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.DBforPostgreSQL/servers/psql-gdp-pro-main
-  tags: 
   links:
     - url: https://portal.azure.com/#@edgeroots.com/resource/subscriptions/7bb994c9-8bd1-4799-a3cb-baff116f5c7b/resourceGroups/rg-gdp-pro-data/providers/Microsoft.DBforPostgreSQL/servers/psql-gdp-pro-main/Overview
       title: My Resource
